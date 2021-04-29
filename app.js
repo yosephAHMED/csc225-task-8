@@ -39,10 +39,37 @@ function swapCase(string) {
 }
 
 // function that converts array of numbers from farenheit to celcius
-function toCelcius(array){
+function toCelcius(array) {
     const calculation = array.map(
         // iterate over each element and apply the farenheit to celcius function
         x => ((x - 32)/1.8)
     )
     return calculation;
+}
+
+// function that takes an input array and returns an array of booleans (>=75) or fail (<75)
+function passOrFail(array) {
+    const calculation = array.map(
+        // if x>=75 the element becomes true, otherwise false
+        x => (x>=75 ? true : false)
+    )
+    return calculation;
+}
+
+// function that loops through the two variables returns an array ['2 is zwei', '3 is drei', '4 is vier', '5 is fünf', '6 is sechs']
+
+function germanNumbers(){
+    const cardinalNumbers = [2,3,4,5,6];
+    const germanNumbers = ['zwei', 'drei', 'vier', 'fünf', 'sechs'];
+
+    // array to store concatenation
+    const concatArr = [];
+
+    // loop through the length of cardinalNumbers
+    for (let i = 0; i < cardinalNumbers.length; i++) {
+        // string is the concatenation of the cardinal number, is, and the german number
+        concatArr[i] = cardinalNumbers[i] + " is " + germanNumbers[i];
+    }
+
+    return concatArr;
 }
